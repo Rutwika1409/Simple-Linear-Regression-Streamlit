@@ -1,0 +1,91 @@
+/* Style sheet for SLR and MLR */
+.stApp {
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+
+    background: linear-gradient(
+        270deg,
+        #efc8e2,
+        #e69393,
+        #8e7def,
+        #efc8e2
+    );
+    background-size: 300% 300%;
+    animation: bgMove 14s ease infinite;
+}
+
+/* Floating dots overlay */
+.stApp::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background:
+        radial-gradient(circle, rgba(239,200,226,0.55) 1px, transparent 1px),
+        radial-gradient(circle, rgba(230,147,147,0.35) 1px, transparent 1px);
+    background-size: 25px 25px, 40px 40px;
+
+    opacity: 0.4;
+    animation: floatDots 60s linear infinite;
+    pointer-events: none;
+}
+
+/* Gradient animation */
+@keyframes bgMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Dots animation */
+@keyframes floatDots {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-500px);
+    }
+}
+
+
+.card{
+    background-color: #ede1ff;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+    color: black;
+
+}
+h1,h2,h3{
+    color: #0f172a;
+}
+/* Metric box */
+div[data-testid = "metric-container"]{
+    background-color: #f8fafc;
+    border-radius: 14px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* In simple linear regression, we have single input and one output column */
+.prediction-box{
+        background: linear-gradient(
+        135deg, 
+        #dcfce7,
+        #bbf7d0,
+    );
+    padding: 22px;
+    border-radius: 14px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #1453dd;
+    margin-top: 15px;
+}
